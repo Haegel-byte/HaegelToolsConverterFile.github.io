@@ -1,0 +1,252 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+h1 {
+    text-align: center;
+}
+
+input, select, button {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#result {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.loading {
+    text-align: center;
+    margin-top: 10px;
+    font-weight: bold;
+    animation: pulse 1s infinite;
+}
+
+.hidden {
+    display: none;
+}
+
+#downloadLink {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+#downloadLink:hover {
+    text-decoration: underline;
+}
+
+.info {
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes pulse {
+    0% { opacity: 0.5; }
+    50% { opacity: 1; }
+    100% { opacity: 0.5; }
+}
+
+.anime-character {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 150px;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+}
+
+.anime-character:hover {
+    transform: scale(1.1);
+}
+
+.anime-character img {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.3));
+}
+
+.speech-bubble {
+    position: absolute;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 15px;
+    max-width: 250px;
+    top: -100px;
+    left: -120px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+    line-height: 1.4;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.speech-bubble.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.speech-bubble::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    right: 30px;
+    border-width: 15px 15px 0;
+    border-style: solid;
+    border-color: #fff transparent;
+    filter: drop-shadow(0 4px 3px rgba(0, 0, 0, 0.1));
+}
+
+.hidden {
+    display: none;
+}
+
+#downloadLink {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+#downloadLink:hover {
+    text-decoration: underline;
+}
+
+.info {
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes pulse {
+    0% { opacity: 0.5; }
+    50% { opacity: 1; }
+    100% { opacity: 0.5; }
+}
+
+.anime-character {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 150px;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+}
+
+.anime-character:hover {
+    transform: scale(1.1);
+}
+
+.anime-character img {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.3));
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+.anime-character {
+    animation: float 3s ease-in-out infinite;
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    .file-input-wrapper {
+        width: 100%;
+    }
+
+    #fileInput + label {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    #formatOutput, #convertBtn {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    #preview {
+        max-height: 200px;
+        overflow-y: auto;
+    }
+
+    .anime-character {
+        width: 80px;
+        bottom: 5px;
+        right: 5px;
+    }
+
+    .speech-bubble {
+        max-width: 150px;
+        top: -60px;
+        left: -60px;
+        font-size: 10px;
+        padding: 8px;
+    }
+}

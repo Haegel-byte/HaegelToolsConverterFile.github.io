@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HaegelTools - Konverter Format File</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.9.359/pdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.4.21/mammoth.browser.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://unpkg.com/docx@7.1.0/build/index.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-tools"></i> HaegelTools</h1>
+            <h2>Konverter Format File</h2>
+        </header>
+        <div id="anime-character" class="anime-character">
+            <img src="images\character-normal.png" alt="Anime Character" id="character-image">
+            <div id="character-speech" class="speech-bubble hidden"></div>
+        </div>
+        <main>
+            <p class="info">Format yang didukung: TXT, HTML, CSV, MD, PDF, DOC, DOCX, XLS, XLSX, JPG, PNG, GIF</p>
+            <div class="file-input-wrapper">
+                <input type="file" id="fileInput" multiple accept=".txt,.html,.csv,.md,.pdf,.doc,.docx,.xls,.xlsx,.jpg,.png,.gif">
+                <label for="fileInput"><i class="fas fa-file-upload"></i> Pilih File</label>
+            </div>
+            <select id="formatOutput">
+                <option value="txt">TXT</option>
+                <option value="html">HTML</option>
+                <option value="csv">CSV</option>
+                <option value="md">MD</option>
+                <option value="pdf">PDF</option>
+                <option value="doc">DOC</option>
+                <option value="docx">DOCX</option>
+                <option value="xls">XLS</option>
+                <option value="xlsx">XLSX</option>
+                <option value="jpg">JPG</option>
+                <option value="png">PNG</option>
+                <option value="gif">GIF</option>
+            </select>
+            <button id="convertBtn"><i class="fas fa-sync-alt"></i> Konversi</button>
+            <div id="loading" class="loading hidden"><i class="fas fa-spinner fa-spin"></i> Mengonversi...</div>
+            <div id="result"></div>
+            <a id="downloadLink" class="hidden"><i class="fas fa-download"></i> Unduh File Hasil Konversi</a>
+            <div id="preview" class="preview hidden"></div>
+        </main>
+        <footer>
+            <p>&copy; 2023 HaegelTools. All rights reserved.</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
